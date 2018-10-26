@@ -1,0 +1,27 @@
+server: 
+  port: 8082
+
+spring: 
+  http: 
+    encoding: 
+    charset: UTF-8
+    enabled: true
+    force: true
+    mail: 
+        default-encoding: UTF-8
+    messages: 
+        encoding: UTF-8
+
+casServerUrlPrefix: https://passport.sso.com:9898/cas
+cas: 
+  prefixUrl: https://passport.sso.com:9898/cas
+  loginUrl: ${cas.prefixUrl}/login
+  logoutUrl: ${cas.prefixUrl}/logout
+  serviceUrl: http://www.casclient1.com:${server.port}
+  callbackUrl: ${cas.serviceUrl}/callback
+jwt:
+  salt: cas
+
+debug: true
+
+
